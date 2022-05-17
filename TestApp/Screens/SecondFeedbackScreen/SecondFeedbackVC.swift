@@ -135,7 +135,7 @@ class SecondFeedbackVC: UIViewController  {
             case .success(_):
                 let alert = UIAlertController(title: "Внимание", message: "Cпасибо за оставленный отзыв)", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { _ in
-                    self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+                    self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
                 }))
                 self.present(alert, animated: true, completion: nil)
             case .failure(_):
