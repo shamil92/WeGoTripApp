@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (5.6.1)
+  - PanModal (1.2.7)
+  - SnapKit (5.6.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - PanModal
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - PanModal
+    - SnapKit
+
+SPEC CHECKSUMS:
+  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
+  PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+
+PODFILE CHECKSUM: 5d1b4166a9e2bcd60c2c601aaba637a36777f2f2
+
+COCOAPODS: 1.11.2
