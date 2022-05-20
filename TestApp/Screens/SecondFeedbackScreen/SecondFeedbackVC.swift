@@ -11,13 +11,13 @@ import SnapKit
 
 
 class SecondFeedbackVC: UIViewController  {
-
+    
     // MARK: - Property
-
+    
     var feedback: FeedbackRequestModel?
-
+    
     // MARK: - Views
-
+    
     private lazy var firstLabel: UILabel = {
         let label = UILabel()
         label.text = "Что вам особенно понравилось в этом \nтуре?"
@@ -64,7 +64,7 @@ class SecondFeedbackVC: UIViewController  {
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         return button
     }()
-
+    
     //MARK: - LifeCycle
     
     override func viewDidLoad() {
@@ -75,7 +75,7 @@ class SecondFeedbackVC: UIViewController  {
     }
     
     //MARK: - AddSubviews
-
+    
     func addSubviews() {
         view.backgroundColor = .white
         [firstLabel,secondLabel, logoImageView,positiveFeedbackTextView,adviceFeedbackTextView,button].forEach({ view.addSubview($0)})
@@ -126,7 +126,7 @@ class SecondFeedbackVC: UIViewController  {
     }
     
     //MARK: - Action
-
+    
     @objc func buttonAction() {
         let feedbacks = FeedbackRequestModel(tourID: feedback?.tourID ?? 0, estimationOfTour: feedback?.estimationOfTour ?? 0, estimationOfGuide: feedback?.estimationOfGuide ?? 0, submissionOfInformation: feedback?.submissionOfInformation ?? 0, navigatingBetweenSteps: feedback?.navigatingBetweenSteps ?? 0, positiveText: positiveFeedbackTextView.text ?? "", adviceText: adviceFeedbackTextView.text ?? "")
         

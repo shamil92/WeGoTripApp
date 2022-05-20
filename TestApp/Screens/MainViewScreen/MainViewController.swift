@@ -12,7 +12,7 @@ import Alamofire
 
 
 class MainViewController: UIViewController {
-
+    
     // MARK: - Views
     
     private lazy var weGoTripImage: UIImageView = {
@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
         label.font = .systemFont(ofSize: Constant.isThiniPhone ? 17 : 20, weight: .bold)
         return label
     }()
-
+    
     private lazy var button: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 10
@@ -38,22 +38,22 @@ class MainViewController: UIViewController {
     }()
     
     // MARK: - LifeCycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
         setConstraints()
     }
-
+    
     // MARK: - AddSubviews
-
+    
     func addSubviews() {
         view.backgroundColor = .white
         [button,weGoTripImage,textLabel].forEach({view.addSubview($0)})
     }
     
     // MARK: - SetConstraints
-
+    
     func setConstraints() {
         weGoTripImage.snp.makeConstraints {
             $0.height.width.equalTo(100)
@@ -73,7 +73,7 @@ class MainViewController: UIViewController {
     }
     
     // MARK: - Action
-
+    
     @objc func buttonAction() {
         let vc = FirstFeedbackVC()
         presentPanModal(vc)

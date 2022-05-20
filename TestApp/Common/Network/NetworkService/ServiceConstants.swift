@@ -9,8 +9,8 @@
 import Foundation
 
 enum ServiceConstants {
-  static let feedbackUrl = APIURL.urlFeedback.rawValue
-  static let imageUrl = APIURL.urlImage.rawValue
+    static let feedbackUrl = APIURL.urlFeedback.rawValue
+    static let imageUrl = APIURL.urlImage.rawValue
 }
 
 enum APIURL: String {

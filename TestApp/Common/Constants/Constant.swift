@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 struct Constant {
     static let screenBounds = UIScreen.main.bounds
     static let screenWidth = UIScreen.main.bounds.width

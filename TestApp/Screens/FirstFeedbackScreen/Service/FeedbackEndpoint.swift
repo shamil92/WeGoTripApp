@@ -32,9 +32,9 @@ enum OrderEndpoint: EndpointProtocol {
             return ["Content-Type": "application/json"]
         }
     }
+    
     var encoding: ParameterEncoding {
         switch self {
-        
         case .addFeedback:
             return JSONEncoding.default
         }

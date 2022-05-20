@@ -7,17 +7,21 @@
 
 import UIKit
 
-
 protocol UpdateViewControllerDelegate {
     func update(data:Data)
 }
 
 class NetworkServiceManager {
     
+    //MARK: - Delegate
     
     var view: UpdateViewControllerDelegate? = nil
-
+    
+    //MARK: - Singleton
+    
     static let shared = NetworkServiceManager()
+    
+    //MARK: - GetImage
     
     func getImage() {
         guard let url = URL(string: ServiceConstants.imageUrl) else { return }
@@ -27,12 +31,8 @@ class NetworkServiceManager {
         
         let session = URLSession.shared
         session.dataTask(with: request) { data, response, error in
-        
-            
             guard let data = data else { return }
-            
             do {
-                
                 DispatchQueue.main.async {
                     self.view?.update(data: data)
                 }

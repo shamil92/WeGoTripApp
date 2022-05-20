@@ -13,11 +13,11 @@ import SnapKit
 class FirstFeedbackVC: UIViewController {
     
     // MARK: - Property
-
+    
     var feedback: FeedbackRequestModel?
     
     // MARK: - Views
-
+    
     private lazy var logoImageView: UIImageView = {
         let image = UIImageView()
         image.layer.cornerRadius = 80 / 2
@@ -65,23 +65,23 @@ class FirstFeedbackVC: UIViewController {
     }()
     
     // MARK: - LifeCycle
-
+    
     override func viewDidLoad() {
         NetworkServiceManager.shared.view = self
         NetworkServiceManager.shared.getImage()
         addSubviews()
         setConstraints()
     }
-
+    
     // MARK: - AddSubviews
-
+    
     func addSubviews() {
         view.backgroundColor = .white
         [logoImageView,titleLabel,firstSlider,secondSlider,thirdSlider,fourthSlider,button].forEach { view.addSubview($0) }
     }
     
     // MARK: - SetConstraints
-
+    
     func setConstraints() {
         logoImageView.snp.makeConstraints {
             $0.height.equalTo(80)
@@ -129,7 +129,7 @@ class FirstFeedbackVC: UIViewController {
     }
     
     // MARK: - Action
-
+    
     @objc func buttonAction() {
         feedback = FeedbackRequestModel(tourID: Int.random(in: 1...100), estimationOfTour: firstSlider.slider.value , estimationOfGuide: secondSlider.slider.value , submissionOfInformation: thirdSlider.slider.value , navigatingBetweenSteps: fourthSlider.slider.value , positiveText: "", adviceText: "")
         

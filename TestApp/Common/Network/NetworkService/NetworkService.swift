@@ -63,7 +63,7 @@ final class NetworkService<Endpoint: EndpointProtocol> {
                     result = NetworkResult.failure(APIError.noNetwork)
                     return
                 }
-            
+                
                 
                 do {
                     result = NetworkResult.success(response.data ?? Data())
@@ -72,7 +72,6 @@ final class NetworkService<Endpoint: EndpointProtocol> {
                     result = NetworkResult.failure(.decodingError)
                 }
             }
-            
         }
     
     // MARK: - Server Error methods

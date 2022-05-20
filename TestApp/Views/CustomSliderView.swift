@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 class CustomSliderView: UIView {
-
+    
     //MARK: - Properties
     
     lazy var titleLabel : UILabel = {
@@ -25,20 +25,20 @@ class CustomSliderView: UIView {
         let imageView = UIImageView()
         return imageView
     }()
-     lazy var slider: UISlider = {
+    lazy var slider: UISlider = {
         let slider = UISlider()
-         slider.minimumValue = 1
-         slider.maximumValue = 5
-         slider.value = 3
-         slider.addTarget(self, action: #selector(actionSlider), for: .allEvents)
-         slider.thumbTintColor = .white
-         slider.minimumTrackTintColor = .blue
-         slider.maximumTrackTintColor = .blue
+        slider.minimumValue = 1
+        slider.maximumValue = 5
+        slider.value = 3
+        slider.addTarget(self, action: #selector(actionSlider), for: .allEvents)
+        slider.thumbTintColor = .white
+        slider.minimumTrackTintColor = .blue
+        slider.maximumTrackTintColor = .blue
         return slider
     }()
     
     //MARK: - Lifecycle
-
+    
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
         addSubviews()
@@ -47,13 +47,13 @@ class CustomSliderView: UIView {
     }
     
     //MARK: - SetupSubviews
-
+    
     func addSubviews() {
         [imageView,titleLabel,slider].forEach({ addSubview($0) })
     }
-        
+    
     //MARK: - Layout
-
+    
     func layout() {
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview().offset(Constant.isThiniPhone ? 5 : 10)
